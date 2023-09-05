@@ -1,0 +1,213 @@
+:root {
+  --sl-color-primary-50: rgb(247 250 246);
+  --sl-color-primary-100: rgb(227 240 224);
+  --sl-color-primary-200: rgb(205 229 201);
+  --sl-color-primary-300: rgb(181 216 175);
+  --sl-color-primary-400: rgb(149 199 140);
+  --sl-color-primary-500: rgb(117 174 107);
+  --sl-color-primary-600: rgb(96 143 88);
+  --sl-color-primary-700: rgb(79 118 72);
+  --sl-color-primary-800: rgb(65 97 59);
+  --sl-color-primary-900: rgb(46 69 42);
+  --sl-color-primary-950: rgb(28 42 26);
+}
+
+:not(:defined) {
+  visibility: hidden;
+}
+
+.sl-scroll-lock {
+  padding: 0 !important;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  overflow: hidden;
+
+  & .sl-toast-stack {
+    left: 50px;
+
+    & sl-alert::part(base) {
+      margin: 10px;
+    }
+  }
+
+  & sl-dialog {
+    display: flex;
+
+    &::part(body) {
+      display: flex;
+      gap: 8px;
+    }
+
+    & sl-button {
+      flex: 1;
+
+      &::part(label) {
+        width: 100%;
+      }
+
+      &:has(label) {
+        &::part(label) {
+          padding: 0;
+        }
+      }
+
+      & label {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 var(--sl-spacing-medium);
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  & sl-split-panel {
+    height: 100dvh;
+
+    & .wrapper {
+      display: flex;
+      justify-content: center;
+
+      & #map {
+        height: 100dvh;
+        width: 100%;
+
+        & .leaflet-control-attribution.leaflet-control {
+          font-family: "Inter", sans-serif;
+          padding: 6px 10px;
+        }
+
+        & .leaflet-popup-content-wrapper {
+          cursor: default;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          transition: 0.5s;
+
+          &:hover {
+            box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 16px 0px;
+            transition: 0.5s;
+          }
+
+          & .leaflet-popup-content {
+            & .description {
+              font-family: "Inter", sans-serif;
+              display: flex;
+              flex-direction: column;
+              user-select: none;
+
+              & h3 {
+                font-size: 1.15rem;
+                margin: 0;
+                margin-bottom: 0.25lh;
+                white-space: nowrap;
+              }
+
+              & p {
+                font-size: 0.8rem;
+                margin: 0;
+                margin-bottom: 0.1lh;
+              }
+            }
+          }
+        }
+      }
+
+      & .day-selector {
+        user-select: none;
+        position: absolute;
+        bottom: 16px;
+        z-index: 99999;
+        width: min(600px, 98%);
+        background: white;
+        padding: 16px 32px;
+        box-sizing: border-box;
+        border-radius: 48px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition: 0.5s;
+
+        &:hover {
+          box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 16px 0px;
+          transition: 0.5s;
+        }
+
+        & .range-wrapper {
+          margin: 1lh 40px;
+
+          &:hover + option {
+            color: #475569;
+            transition: 0.5s;
+          }
+
+          & input[type="range"] {
+            width: 100%;
+            margin: 0;
+          }
+        }
+
+        & datalist {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          user-select: none;
+
+          & option {
+            padding: 0;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            transition: 0.5s;
+            width: 80px;
+            overflow: visible;
+            display: block;
+          }
+        }
+      }
+    }
+
+    & code-input {
+      margin: 0;
+      height: 100%;
+    }
+
+    & pre {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    & code-input textarea {
+      &::placeholder {
+        opacity: 0.25;
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #fffaf3;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #ed9d6b;
+      }
+    }
+
+    & .toolbox {
+      display: flex;
+      padding: 8px;
+      gap: 8px;
+
+      & sl-button {
+        flex: 1;
+        height: fit-content;
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trip Planner</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Tool for travel planning" />
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8pYgd/OVIe3zlSHt8pUgdgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADzliDqtq1a/6yxY//zliH/85Yh//OWIf/zliH/8pUg6QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADzliH/85Yh/znczf853M3/uqtW//OWIf/zliH/85Yh/znczf/zliH/AAAAAAAAAAAAAAAAAAAAAAAAAADzliDq85Yh/76qUv853M3/OdzN/znczf/zliH/85Yh//OWIf853M3/OdzN//OWIewAAAAAAAAAAAAAAAAAAAAA85Yh//OWIf9az6//OdzN/0nWvv/zliH/85Yh//OWIf/zliH/OdzN/znczf+4rFj/AAAAAAAAAAAAAAAA8pYhevOWIf+NvYD/85Yh//OWIf/zliH/85Yh//OWIf853M3/OdzN/znczf853M3/OdzN//KWIHcAAAAAAAAAAPOVIe0+28n/2p84/9yfNv/zliH/85Yh//OWIf/zliH/OdzN/znczf853M3/OdzN/znczf/zliDqAAAAAAAAAADzlSHtOdzN/znczf853M3/85Yh//OWIf/zliH/85Yh/5S6ef853M3/OdzN/znczf853M3/85Ug6wAAAAAAAAAA8pYgfTnczf853M3/OdzN/znczf853M3/85Yh//OWIf/zliH/OdzN/znczf853M3/OdzN//KVIXsAAAAAAAAAAAAAAAC4rFj/OdzN/0jXwP+yr13/OdzN//OWIf/zliH/85Yh//OWIf853M3/OdzN/62wYf8AAAAAAAAAAAAAAAAAAAAA85Yg8Tnczf853M3/85Yh//OWIf/zliH/4pww//OWIf/zliH/OdzN/znczf/zliDxAAAAAAAAAAAAAAAAAAAAAAAAAADzliH/kLt9/0PYxP/smSf/85Yh/znczf+ZuHT/85Yh/6Szav/zliH/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPOVIPLzliH/85Yh/4+7fP853M3/OdzN//OWIf/zlSDyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPKVIH7zliHu85Yh7vKWIH0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP5/AADwDwAA4AcAAMADAADAAwAAwAMAAIABAACAAQAAwAMAAMADAADAAwAA4AcAAPAPAAD+fwAA//8AAA=="
+      rel="icon"
+      type="image/x-icon"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <!-- ui -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/themes/light.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/components/dialog/dialog.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/components/button/button.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/components/split-panel/split-panel.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/components/alert/alert.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/components/tooltip/tooltip.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/toolcool-range-slider/dist/toolcool-range-slider.min.js"></script>
+
+    <!-- map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.1.0/leaflet.polylineDecorator.min.js"
+      integrity="sha512-2oK40N5b+8g4Fhp1rfdtmNaroXsh7tFN4OY6++9lB/Hb+uLQWmn0SSAXvnQfbn8BP8qtpri2YQLaFGpyzKUHow=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- code input -->
+    <link rel="stylesheet" href="./plugins/prism.css" />
+    <script src="./plugins/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.0/code-input.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/WebCoder49/code-input@2.0/code-input.min.css" />
+    <script src="./plugins/indent.js"></script>
+
+    <!-- dayjs -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/minMax.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+
+    <!-- custom -->
+    <script src="./demo.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <sl-dialog label="Trip Planner" class="dialog-overview" no-header>
+      <sl-tooltip content="Load From Local Storage">
+        <sl-button id="load" variant="primary" disabled> Load </sl-button>
+      </sl-tooltip>
+      <sl-tooltip content="Upload JSON File">
+        <sl-button variant="primary" outline>
+          <input type="file" id="import" hidden />
+          <label for="import"> Import </label>
+        </sl-button>
+      </sl-tooltip>
+      <sl-tooltip content="Create Empty Project">
+        <sl-button id="create-new" variant="primary" outline> Create New </sl-button>
+      </sl-tooltip>
+      <sl-tooltip content="Run Demo Project">
+        <sl-button id="show-demo" variant="primary" outline> Show Demo </sl-button>
+      </sl-tooltip>
+    </sl-dialog>
+
+    <sl-split-panel id="main" position="75">
+      <div slot="start">
+        <div class="wrapper">
+          <div id="map"></div>
+          <div class="day-selector" hidden>
+            <div class="range-wrapper">
+              <tc-range-slider
+                slider-width="100%"
+                slider-height="0.5lh"
+                slider-bg-fill="#ed9d6b"
+                type="range"
+                id="dates"
+                name="dates"
+                list="values"
+                step="1"
+                min="0"
+                value="0"
+              ></tc-range-slider>
+            </div>
+            <datalist id="values"> </datalist>
+          </div>
+        </div>
+      </div>
+      <div id="editor" slot="end">
+        <sl-split-panel primary="end" vertical position-in-pixels="60" style="--min: 60px; --max: calc(100% - 60px)">
+          <div slot="start">
+            <code-input
+              lang="JSON"
+              template="syntax-highlighted"
+              placeholder="See demo for example configuration"
+            ></code-input>
+          </div>
+          <div slot="end" class="toolbox">
+            <sl-tooltip content="Update Map">
+              <sl-button id="update" variant="primary"> Update </sl-button>
+            </sl-tooltip>
+
+            <sl-tooltip content="Copy Link to Clipboard">
+              <sl-button id="share" variant="primary" outline> Share </sl-button>
+            </sl-tooltip>
+
+            <sl-tooltip content="Save Locally">
+              <sl-button id="save" variant="primary" outline> Save </sl-button>
+            </sl-tooltip>
+
+            <sl-tooltip content="Download JSON File">
+              <sl-button id="download" variant="primary" outline> Download </sl-button>
+            </sl-tooltip>
+          </div>
+        </sl-split-panel>
+      </div>
+    </sl-split-panel>
+  </body>
+  <script src="./scripts.js"></script>
+</html>
